@@ -67,7 +67,7 @@ class Puppet::Rails::Schema
           t.column :created_at, :datetime
         end
         add_index :hosts, :source_file_id, :integer => true
-        add_index :hosts, :name
+        add_index :hosts, :name, :unique => true
 
         create_table :fact_names do |t|
           t.column :name, :string, :null => false
